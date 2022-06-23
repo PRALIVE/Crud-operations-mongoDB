@@ -15,7 +15,7 @@ dotenv.config();
 var senddata=[];
 
 //connecting to our mongoDb server at atlas
-mongoose.connect("mongodb+srv://PankajCrud:crud@cluster0.m6vkv3c.mongodb.net/UsersDB")
+mongoose.connect("mongodb+srv://PankajCrud:<password>@cluster0.m6vkv3c.mongodb.net/UsersDB")
 
 //the structure in which our data will be stored in mongodb database
 const listschema={
@@ -112,7 +112,7 @@ app.post("/add",function(req,res){
        senddata=[];
        let mailOptions = {
            from: '"Pankaj" <pankajpcm111@gmail.com>', // sender address
-           to: '<richyadav6@gmail.com>', // list of receivers
+           to: '<info@redpositive.in>', // list of receivers
            subject: 'Selected Users Data', // Subject line
            text: 'hello', // plain text body
            html: '<div><table><thead><tr><th>Name</th><th>Phone</th><th>Email</th><th>Hobbies</th></tr></thead><tbody>' + content + '</tbody></table></div>'// html body
