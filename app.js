@@ -101,8 +101,8 @@ app.post("/add",function(req,res){
            port: 465,
            secure: true,
            auth: {
-               user: "pankajpcm111@gmail.com",
-               pass: "bxqqiwirrpqilhia"
+               user: process.env.user,
+               pass: process.env.pass
            }
        });
        var content = senddata.reduce(function(a, b) {
