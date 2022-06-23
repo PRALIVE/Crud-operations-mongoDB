@@ -1,0 +1,17 @@
+<%- include("header") -%>
+
+    <div class="formdiv">
+    <form class="formclass" action="/updateitem" method="post">
+      <label for="name">Name</label>
+      <input type="text" name="name" value="<%=item.name%>">
+      <label for="Phone">Phone Number</label>
+      <input  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" name="phone"  maxlength="10" value="<%=item.phone%>">
+      <label for="email">Email</label>
+      <input type="email" name="email" value="<%=item.email%>">
+      <label for="hobbies">Hobbies</label>
+      <textarea name="hobbies" rows="6" cols="80" value="<%=item.hobbies%>"><%=item.hobbies%></textarea>
+      <button type="submit" class="btn btn-success" name="updateid" value="<%=item._id%>">Update</button>
+    </form>
+    </div>
+
+<%- include("footer") -%>

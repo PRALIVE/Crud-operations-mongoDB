@@ -1,0 +1,20 @@
+<%- include("header") -%>
+
+    <div class="formdiv">
+    <form class="formclass" action="/" method="post">
+      <label for="name">Name</label>
+      <input type="text" name="name" autocomplete="off" value="">
+      <label for="Phone">Phone Number</label>
+      <input autocomplete="off"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" name="phone"  maxlength="10" value="">
+      <label for="email">Email</label>
+      <input type="email" name="email" autocomplete="off" value="">
+      <label for="hobbies">Hobbies</label>
+      <textarea name="hobbies" rows="6" cols="80" placeholder="After every hobby give a comma sign"></textarea>
+      <button type="submit" name="button" class="btn btn-danger">SAVE</button>
+    </form>
+    <form class="showtable" action="/showtable" method="post">
+        <button type="submit" name="button" class="btn btn-info">ALL USERS TABLE</button>
+    </form>
+    </div>
+
+<%- include("footer") -%>

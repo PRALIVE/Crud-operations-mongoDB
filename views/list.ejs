@@ -1,0 +1,45 @@
+<%- include("header") -%>
+
+    <div class="buttonsdiv">
+      <form  action="/add" method="post">
+        <button class="addbutton btn btn-success" type="submit" name="button">Add Data</button>
+      </form>
+      <form action="/send" method="post">
+        <button class="btn btn-warning" type="submit" name="button">Send Email</button>
+ 	    </form>
+    </div>
+    <div class="divtable">
+    <table>
+      <tr>
+        <th></th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone No.</th>
+        <th>Email</th>
+        <th>Hobbies</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    <% newlistitems.forEach(function(element){ %>
+        <tr>
+          <form action="/checkbox" method="post">
+            <td><input id="<%=element._id%>" type="checkbox" name="checkbox" value="<%=element._id%>" onChange="this.form.submit()"></td>
+          </form>
+          <td><%= element._id %></td>
+          <td><%= element.name %></td>
+          <td><%= element.phone %></td>
+          <td><%= element.email %></td>
+          <td><%= element.hobbies %></td>
+          <form  action="/update" method="post">
+              <td><button class="btn btn-secondary"type="submit" name="update" value="<%=element._id%>" onClick="this.form.submit()">Update</button></td>
+          </form>
+          <form  action="/delete" method="post">
+            <td><button class="btn btn-danger" type="submit" name="delete" value="<%=element._id%>" onClick="this.form.submit()">Delete</button></td>
+          </form>
+        </tr>
+    <% }); %>
+    </table>
+   </div>
+
+
+<%- include("footer") -%>
